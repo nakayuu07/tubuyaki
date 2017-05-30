@@ -1,0 +1,13 @@
+<h3>以下の内容で、送信する。</h3>
+
+<%= form_for(@article) do |f| %>
+  <%= f.hidden_field :content %>
+  
+  <p>タイトル:<%= @article.content %></p>
+  <%= f.submit "登録する" %>
+<% end %>
+
+<%= form_for(@article, url: new_article_path, method: 'get') do |f| %>
+  <%= f.hidden_field :content %>
+  <%= f.submit "もどる", name:'back' %>
+<% end %>

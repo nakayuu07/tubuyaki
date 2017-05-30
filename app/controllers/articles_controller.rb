@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
    end
   
    def new
-     @article = Article.new
+     if params[:back]
+      @article = Article.new(articles_params)
+    else
+      @article = Article.new
+    end
    end
   
    def create
@@ -36,6 +40,10 @@ class ArticlesController < ApplicationController
      redirect_to articles_path,notice:"つぶやきを削除しました"
    end
    
+   def confirm
+    @article= Article.new(articles_params)
+     render :new if @blog.invalid?
+   end
    
    private
     def articles_params
