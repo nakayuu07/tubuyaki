@@ -1,8 +1,12 @@
+<P><%= notice %></p>
+
 <h1>つぶやき一覧</h1>
 
 
 <% @articles.each do |article| %>
  <p>本文：<%= article.content %></p>
+ <%=link_to "つぶやきを編集する",edit_article_path(article.id)%>
+ <%=link_to "つぶやきを削除する",article_path(article.id),method: :delete, data:{ confirm: '本当に削除していいですか？' } %>
 <% end %>
 
 <%=link_to "つぶやく", new_article_path %>
