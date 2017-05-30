@@ -1,0 +1,8 @@
+<h1>つぶやき一覧</h1>
+
+
+<% @articles.each do |article| %>
+ <p>本文：<%= article.content %></p>
+<% end %>
+
+<%=link_to "つぶやく", new_article_path %>
