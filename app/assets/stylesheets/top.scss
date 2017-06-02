@@ -1,0 +1,56 @@
+header {
+  width: 100%;
+  background-color: black;
+  height: 54px;
+}
+
+header ul {
+  margin: 0 auto;
+  list-style: none;
+}
+
+header ul a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+header li {
+  float: left;
+  width: auto;
+}
+
+header ul:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.about{
+    height: 600px;
+    width:  550px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    color: white;
+}
+
+
+footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  margin: auto;
+  font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.topdesign{
+  background-image: url("images.jpg");
+  background-size: cover;
+  padding-bottom: 150px;
+}

@@ -5,10 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-
+  
+ <header>
+   <ul>
+     <li><%= link_to "ホーム", root_path %></li>
+     <li><a href="#"> 通知</a></li>
+     <li><%= link_to "ツイート一覧", articles_path %>
+     <li><a href="#"> メッセージ</a></li> 
+     <li><%= link_to "新規投稿",new_article_path %></li> 
+   </ul>
+ </header>
+  
+ 
+  
+ 
 <%= yield %>
+
+ <footer>
+    <p>twitter練習用アプリケーション</p>
+ </footer>
+
 
 </body>
 </html>

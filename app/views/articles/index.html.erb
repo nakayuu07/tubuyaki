@@ -1,12 +1,17 @@
-<P><%= notice %></p>
-
-<h1>つぶやき一覧</h1>
-
-
-<% @articles.each do |article| %>
- <p>本文：<%= article.content %></p>
- <%=link_to "つぶやきを編集する",edit_article_path(article.id)%>
- <%=link_to "つぶやきを削除する",article_path(article.id),method: :delete, data:{ confirm: '本当に削除していいですか？' } %>
-<% end %>
-
-<%=link_to "つぶやく", new_article_path %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
+   
+   <P><%= notice %></p>
+   <div class="text-center">
+     <h1>一覧</h1>
+     <%=link_to "つぶやく", new_article_path , class: 'btn-default-bg-info'%>
+     <div class="row">
+      <% @articles.each do |article| %>
+        <p><strong>本文：<%= article.content %></strong></p>
+        <%=link_to "編集する",edit_article_path(article.id),class: 'btn btn-default btn-sm btn-success' %>
+        <%=link_to "削除する",article_path(article.id),method: :delete, data:{ confirm: '本当に削除していいですか？' } , class: 'btn btn-default btn-sm btn btn-danger' %>
+      <% end %>
+     </div>
+    </div>
+  </div>
+</div>

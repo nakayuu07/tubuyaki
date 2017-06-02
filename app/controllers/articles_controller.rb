@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
    
    def confirm
     @article= Article.new(articles_params)
-     render :new if @blog.invalid?
+     render :new if @article.invalid?
    end
    
    private
